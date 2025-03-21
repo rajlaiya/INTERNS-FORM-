@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eastern Techno Solution</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+        }
+
+        .header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .glassmorphism-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+        }
+        
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            outline: none;
+        }
+
+        button {
+            cursor: pointer;
+            background: #333;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #555;
+            color: white;
+            text-align: left;
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        body {
+            counter-reset: Serial;
+        }
+
+        table {
+            border-collapse: separate;
+        }
+
+        tr td:first-child:before {
+            counter-increment: Serial;
+            content: counter(Serial);
+        }
+
+    </style>
+</head>
+
+<body style="background-image: url('https://www.webomindapps.com/images/blog/css-background-image-responsive.webp');background-attachment:fixed ; background-repeat: no-repeat; background-size:cover; width: auto; height: auto; position: relative; overflow: auto;;">
+    <div class="header">
+        <h2 align="center" style="color: aquamarine;"><b>EASTERN TECHNO SOLUTION</b></h2>
+    </div>
+    
+    <div class="glassmorphism-container">
+        <p style="color: rgb(0, 0, 0);"><b><u>Hello, interns...</u></b></p>
+        <label for="fname" style="color: antiquewhite;"><b>Enter full name:</b></label>
+        <input type="text" id="fname" name="Name">
+        <label for="eid" style="color: antiquewhite;"><b>Enter email id:</b></label>
+            <input type="email" id="eid" name="email">
+        <label for="Stat" style="color: antiquewhite;"><b>Status:</b></label>
+        <select id="Stat">
+            <option value="YES"><b>YES</b></option>
+            <option value="NO"><b>NO</b></option>
+        </select>
+        <label for="Duration" style="color: antiquewhite;"><b>Duration:</b></label>
+        <input type="time" id="Duration" name="Duration">
+        <button onclick="tableManager.addRow(tableManager.getFormData())"><b>Add Row</b></button>
+        <input type="text" id="tr" placeholder="Search for names.." title="Type in a name">
+        <button onclick="tableManager.sortTable()">Sort</button>
+            <button onclick="tableManager.filterByStatus()"><b>Filter by Status</b></button>
+            <button id="clearStatusFilter">Clear Status Filter</button>
+            
+            <table border="1" id="myTable" style="color: antiquewhite;">
+                <b>
+                    <thead>
+                <tr>
+                    <th>Sr no.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Duration</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody> <!-- Ensure you have this tbody element -->
+            </b>
+        </table>
+    </div>
+    <script src="tstask2.js"></script>
+</body>
+</html>
